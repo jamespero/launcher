@@ -1,0 +1,213 @@
+$paddingValues: (0, 1, 2, 3);
+$marginValues: (0, 1, 2, 3);
+
+/* PADDINGS */
+@mixin generate-padding() {
+	@each $padding in $paddingValues {
+		.u-p-#{$padding} {
+			padding-top: #{$padding}rem !important;
+			padding-right: #{$padding}rem !important;
+			padding-bottom: #{$padding}rem !important;
+			padding-left: #{$padding}rem !important;
+		}
+	}
+}
+
+.u-p-05 {
+	padding-top: 0.5rem !important;
+	padding-right: 0.5rem !important;
+	padding-bottom: 0.5rem !important;
+	padding-left: 0.5rem !important;
+}
+
+@mixin generate-padding-top() {
+	@each $padding in $paddingValues {
+		.u-p-t-#{$padding} {
+			padding-top: #{$padding}rem !important;
+		}
+	}
+}
+
+.u-p-t-05 {
+	padding-top: 0.5rem !important;
+}
+
+@mixin generate-padding-right() {
+	@each $padding in $paddingValues {
+		.u-p-r-#{$padding} {
+			padding-right: #{$padding}rem !important;
+		}
+	}
+}
+
+.u-p-r-05 {
+	padding-right: 0.5rem !important;
+}
+
+@mixin generate-padding-bottom() {
+	@each $padding in $paddingValues {
+		.u-p-b-#{$padding} {
+			padding-bottom: #{$padding}rem !important;
+		}
+	}
+}
+
+.u-p-b-05 {
+	padding-bottom: 0.5rem !important;
+}
+
+@mixin generate-padding-left() {
+	@each $padding in $paddingValues {
+		.u-p-l-#{$padding} {
+			padding-left: #{$padding}rem !important;
+		}
+	}
+}
+
+.u-p-l-05 {
+	padding-left: 0.5rem !important;
+}
+
+@mixin generate-padding-top-bottom() {
+	@each $padding in $paddingValues {
+		.u-p-tb-#{$padding} {
+			padding-top: #{$padding}rem !important;
+			padding-bottom: #{$padding}rem !important;
+		}
+	}
+}
+
+.u-p-tb-05 {
+	padding-top: 0.5rem !important;
+	padding-bottom: 0.5rem !important;
+}
+
+@mixin generate-padding-left-right() {
+	@each $padding in $paddingValues {
+		.u-p-lr-#{$padding} {
+			padding-left: #{$padding}rem !important;
+			padding-right: #{$padding}rem !important;
+		}
+	}
+}
+
+.u-p-lr-05 {
+	padding-left: 0.5rem !important;
+	padding-right: 0.5rem !important;
+}
+
+/* MARGINS */
+
+.u-m-05 {
+	margin-top: 0.5rem !important;
+	margin-right: 0.5rem !important;
+	margin-bottom: 0.5rem !important;
+	margin-left: 0.5rem !important;
+}
+
+@mixin generate-margin() {
+	@each $margin in $marginValues {
+		.u-m-#{$margin} {
+			margin-top: #{$margin}rem !important;
+			margin-right: #{$margin}rem !important;
+			margin-bottom: #{$margin}rem !important;
+			margin-left: #{$margin}rem !important;
+		}
+	}
+}
+
+.u-m-t-05 {
+	margin-top: 0.5rem !important;
+}
+
+@mixin generate-margin-top() {
+	@each $margin in $marginValues {
+		.u-m-t-#{$margin} {
+			margin-top: #{$margin}rem !important;
+		}
+	}
+}
+
+.u-m-r-05 {
+	margin-right: 0.5rem !important;
+}
+
+@mixin generate-margin-right() {
+	@each $margin in $marginValues {
+		.u-m-r-#{$margin} {
+			margin-right: #{$margin}rem !important;
+		}
+	}
+}
+
+.u-m-b-05 {
+	margin-bottom: 0.5rem !important;
+}
+
+@mixin generate-margin-bottom() {
+	@each $margin in $marginValues {
+		.u-m-b-#{$margin} {
+			margin-bottom: #{$margin}rem !important;
+		}
+	}
+}
+
+.u-m-l-05 {
+	margin-left: 0.5rem !important;
+}
+
+@mixin generate-margin-left() {
+	@each $margin in $marginValues {
+		.u-m-l-#{$margin} {
+			margin-left: #{$margin}rem !important;
+		}
+	}
+}
+
+.u-m-tb-05 {
+	margin-top: 0.5rem !important;
+	margin-bottom: 0.5rem !important;
+}
+
+@mixin generate-margin-top-bottom() {
+	@each $margin in marginValues {
+		.u-m-tb-#{$margin} {
+			margin-top: #{$margin}rem !important;
+			margin-bottom: #{$margin}rem !important;
+		}
+	}
+}
+
+.u-m-lr-05 {
+	margin-left: 0.5rem !important;
+	margin-right: 0.5rem !important;
+}
+
+@mixin generate-margin-left-right() {
+	@each $margin in $marginValues {
+		.u-m-lr-#{$margin} {
+			margin-left: #{$margin}rem !important;
+			margin-right: #{$margin}rem !important;
+		}
+	}
+}
+
+@include generate-padding();
+@include generate-padding-bottom();
+@include generate-padding-left();
+@include generate-padding-left-right();
+@include generate-padding-right();
+@include generate-padding-top();
+@include generate-padding-top-bottom();
+
+@include generate-margin();
+@include generate-margin-bottom();
+@include generate-margin-left();
+@include generate-margin-left-right();
+@include generate-margin-right();
+@include generate-margin-top();
+@include generate-margin-top-bottom();
+
+.u-w-f {
+	width: 100%;
+}

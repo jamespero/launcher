@@ -1,0 +1,130 @@
+/*
+	A Few links to learn how to use flexbox
+
+	https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+	http://www.sketchingwithcss.com/samplechapter/cheatsheet.html
+	http://flexboxfroggy.com/
+*/
+
+@mixin flexbox($important: '') {
+	display: -webkit-box #{$important};
+	display: -moz-box #{$important};
+	display: -ms-flexbox #{$important};
+	display: -webkit-flex #{$important};
+	display: flex #{$important};
+}
+
+@mixin flexbox-inline($important: '') {
+	display: -webkit-inline-box #{$important};
+	display: -moz-inline-box #{$important};
+	display: -ms-inline-flexbox #{$important};
+	display: -webkit-inline-flex #{$important};
+	display: inline-flex #{$important};
+}
+
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex: $values;
+	-webkit-flex: $values;
+	-ms-flex: $values;
+	flex: $values;
+}
+
+@mixin flex-flow(
+	$values: (
+		row nowrap
+	)
+) {
+	// No Webkit Box fallback.
+	-webkit-flex-flow: $values;
+	-moz-flex-flow: $values;
+	-ms-flex-flow: $values;
+	flex-flow: $values;
+}
+
+@mixin flex-basis($value: auto) {
+	-webkit-flex-basis: $value;
+	-moz-flex-basis: $value;
+	-ms-flex-preferred-size: $value;
+	flex-basis: $value;
+}
+
+@mixin order($val) {
+	-webkit-box-ordinal-group: $val;
+	-moz-box-ordinal-group: $val;
+	-ms-flex-order: $val;
+	-webkit-order: $val;
+	order: $val;
+}
+
+@mixin flex-direction($val) {
+	-webkit-flex-flow: $val;
+	-moz-flex-flow: $val;
+	-ms-flex-flow: $val;
+	flex-direction: $val;
+}
+
+@mixin align-items($val) {
+	@if $val == 'flex-start' {
+		-ms-flex-align: start;
+	} @else if $val == 'flex-end' {
+		-ms-flex-align: end;
+	} @else {
+		-ms-flex-align: $val;
+	}
+	-webkit-align-items: $val;
+	-moz-align-items: $val;
+	-ms-align-items: $val;
+	align-items: $val;
+}
+
+@mixin align-self($val) {
+	@if $val == 'flex-start' {
+		-ms-flex-align: start;
+	} @else if $val == 'flex-end' {
+		-ms-flex-align: end;
+	} @else {
+		-ms-flex-align: $val;
+	}
+	-ms-flex-item-align: $val;
+	-webkit-align-self: $val;
+	-moz-align-self: $val;
+	-ms-align-self: $val;
+	align-self: $val;
+}
+
+@mixin justify-content($val) {
+	@if $val == 'space-between' {
+		-ms-flex-pack: justify;
+	} @else {
+		-ms-flex-pack: $val;
+	}
+	-webkit-justify-content: $val;
+	-moz-justify-content: $val;
+	-ms-justify-content: $val;
+	justify-content: $val;
+}
+
+@mixin flex-shrink($val) {
+	-webkit-box-flex: 0 $val 0;
+	-moz-box-flex: 0 $val 0;
+	-webkit-flex: 0 $val 0;
+	-ms-flex: 0 $val 0;
+	flex: 0 $val 0;
+}
+
+@mixin flex-grow($val) {
+	-webkit-box-flex: $val 0 0;
+	-moz-box-flex: $val 0 0;
+	-webkit-flex: $val 0 0;
+	-ms-flex: $val 0 0;
+	flex: $val 0 0;
+}
+
+@mixin flex-wrap($val) {
+	-webkit-flex-wrap: $val;
+	-moz-flex-wrap: $val;
+	-ms-flex-wrap: $val;
+	-o-flex-wrap: $val;
+	flex-wrap: $val;
+}

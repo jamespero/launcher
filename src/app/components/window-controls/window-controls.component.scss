@@ -1,0 +1,17 @@
+.window-controls {
+  height: 30px;
+  min-height: 30px;
+  color: #fff;
+
+  &__button {
+    height: 30px;
+    width: 30px;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+    transition: color .3s;
+
+    &:hover {
+      color: #77bbff;
+    }
+  }
+}

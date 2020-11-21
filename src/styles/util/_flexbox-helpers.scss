@@ -1,0 +1,110 @@
+@import 'flexbox-mixins';
+
+.u-vbox,
+.u-flexbox-column,
+.u-hbox,
+.u-flexbox-row {
+  @include flexbox();
+  @include flex-direction(row);
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
+}
+
+.u-hbox,
+.u-flexbox-row {
+  @include flex-direction(row);
+
+  &.u-vcenter {
+    @include align-items(center);
+  }
+
+  &.u-hcenter {
+    @include justify-content(center);
+  }
+
+  &.u-vhcenter {
+    @include align-items(center);
+    @include justify-content(center);
+  }
+
+  &.u-vtop {
+    @include align-items(flex-start);
+  }
+
+  &.u-vbottom {
+    @include align-items(flex-end);
+  }
+
+  &.u-vfit {
+    @include align-items(stretch);
+  }
+
+  &.u-hleft {
+    @include justify-content(flex-start);
+  }
+
+  &.u-hright {
+    @include justify-content(flex-end);
+  }
+}
+
+.u-vbox,
+.u-flexbox-column {
+  @include flex-direction(column);
+
+  &.u-vcenter {
+    @include justify-content(center);
+  }
+
+  &.u-hcenter {
+    @include align-items(center);
+  }
+
+  &.u-vhcenter {
+    @include align-items(center);
+    @include justify-content(center);
+  }
+
+  &.u-vtop {
+    @include justify-content(flex-start);
+  }
+
+  &.u-vbottom {
+    @include justify-content(flex-end);
+  }
+
+  &.u-hfit {
+    @include align-items(stretch);
+  }
+
+  &.u-hleft {
+    @include align-items(flex-start);
+  }
+
+  &.u-hright {
+    @include align-items(flex-end);
+  }
+}
+
+// Used to grow an item to take up as much
+// space as possible in relation to its peers
+.u-grow-1 {
+  @include flex-grow(1);
+}
+
+.u-grow-2 {
+  @include flex-grow(2);
+}
+
+.u-grow-3 {
+  @include flex-grow(3);
+}
+
+.u-grow-4 {
+  @include flex-grow(4);
+}
+
+// Used to shrink wrap an item to fit its content
+.u-shrink {
+  @include flex-shrink(1);
+}
