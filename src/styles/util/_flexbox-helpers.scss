@@ -86,6 +86,14 @@
   }
 }
 
+.u-align-self-right {
+  @include align-self(flex-end);
+}
+
+.u-align-self-left {
+  @include align-self(flex-start);
+}
+
 // Used to grow an item to take up as much
 // space as possible in relation to its peers
 .u-grow-1 {

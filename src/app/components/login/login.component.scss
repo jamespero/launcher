@@ -1,0 +1,16 @@
+.login {
+  &__title {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  &__input {
+    min-width: 300px;
+  }
+}
