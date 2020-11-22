@@ -4,16 +4,14 @@
   "main": "main.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod && asar pack ./dist ./asar/app.asar",
+    "start": "npm run build && electron .",
+    "package": "npm run build && electron-packager ./asar launcher --platform=win32",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prettier:check": "prettier -c \"src/**/*.*\"",
-    "prettier:fix": "prettier -w \"src/**/*.*\"",
-    "electron": "electron .",
-    "electron-build": "ng build --prod && electron .",
-    "package": "electron-packager . --platform=win32"
+    "prettier:fix": "prettier -w \"src/**/*.*\""
   },
   "private": true,
   "dependencies": {

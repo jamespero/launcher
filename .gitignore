@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 
 /launcher-win32-x64
+/asar
