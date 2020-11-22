@@ -16,8 +16,6 @@ function createWindow() {
       enableRemoteModule: true
     }
   });
-  // Catch and prevent devtools shortcut
-  const ret = globalShortcut.register('CommandOrControl+Shift+I', () => {});
 
   win.loadURL(`file://${__dirname}/dist/index.html`);
   win.setFullScreenable(false);
@@ -26,19 +24,23 @@ function createWindow() {
   win.setMenuBarVisibility(false);
   win.webContents.openDevTools({detached: true});
 
+  win.webContents.on('before-input-event', (event, input) => {
+    if ((input.shift && input.control && input.key.toLowerCase() === 'i')
+      || input.key.toLocaleLowerCase() === 'f5'
+      || (input.control && input.key.toLocaleLowerCase() === 'r')
+      || (input.control && input.shift && input.key.toLocaleLowerCase() === 'r')
+      || (input.control && input.key.toLocaleLowerCase() === 'f5')
+      || (input.control && input.shift && input.key.toLocaleLowerCase() === 'f5')) {
+      event.preventDefault()
+    }
+  });
+
   win.on('closed', function () {
     win = null;
   });
 }
 
 app.on('ready', createWindow);
-app.on('will-quit', () => {
-  // Unregister a shortcut.
-  globalShortcut.unregister('CommandOrControl+Shift+I')
-
-  // Unregister all shortcuts.
-  globalShortcut.unregisterAll()
-})
 app.on('window-all-closed', function () {
   app.quit();
 });
