@@ -14,7 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LinksComponent } from './components/links/links.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { UpdateComponent } from './components/update/update.component';
+import { UpdatingComponent } from './components/updating/updating.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { UpdateComponent } from './components/update/update.component';
     LinksComponent,
     FooterComponent,
     SettingsComponent,
-    UpdateComponent
+    UpdatingComponent
   ],
   imports: [
     BrowserModule,

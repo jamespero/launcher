@@ -1,4 +1,4 @@
-const { app, BrowserWindow, globalShortcut } = require('electron');
+const { app, BrowserWindow } = require('electron');
 
 let win;
 
@@ -7,7 +7,7 @@ function createWindow() {
     width: 1100,
     height: 550,
     backgroundColor: '#333333',
-    icon: `file://${__dirname}/dist/assets/logo.png`,
+    icon: `${__dirname}/dist/assets/logo.png`,
     frame: false,
     webPreferences: {
       nodeIntegration: true,

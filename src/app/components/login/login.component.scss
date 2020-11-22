@@ -1,13 +1,14 @@
 .login {
   &__title {
-    font-size: 2rem;
+    font-family: 'Teko', Arial, sans-serif;
+    font-size: 1.4rem;
     color: #fff;
-    font-weight: 400;
     text-transform: uppercase;
   }
   &__subtitle {
     font-size: 0.9rem;
     color: rgba(255,255,255,0.75);
+    color:#64b5f6;
   }
 
   &__input {

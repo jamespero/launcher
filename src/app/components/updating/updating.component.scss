@@ -1,0 +1,9 @@
+.updating {
+  color: #64b5f6;
+  &__label,
+  &__detail {
+    span {
+      color: #64b4f6bb;
+    }
+  }
+}

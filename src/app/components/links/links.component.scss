@@ -1,0 +1,9 @@
+.links {
+  color: #fff;
+  font-family: 'Teko', Arial, sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  &__link:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
