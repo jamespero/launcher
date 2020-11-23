@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron');
-const fs = require('fs')
 
 let win;
 
@@ -8,7 +7,7 @@ function createWindow() {
     width: 1100,
     height: 550,
     backgroundColor: '#333333',
-    icon: `${__dirname}/asar/app.asar/assets/logo.png`,
+    icon: `${__dirname}/dist/assets/logo.png`,
     frame: false,
     webPreferences: {
       nodeIntegration: true,
@@ -17,7 +16,7 @@ function createWindow() {
       enableRemoteModule: true
     }
   });
-  win.loadURL(`file://${__dirname}/asar/app.asar/index.html`);
+  win.loadURL(`file://${__dirname}/dist/index.html`);
   win.setFullScreenable(false);
   win.setResizable(false);
   win.setMaximizable(false);

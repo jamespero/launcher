@@ -1,12 +1,14 @@
 {
   "name": "launcher",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Pero & Co.",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
     "build": "ng build --prod && asar pack ./dist ./asar/app.asar",
     "start": "npm run build && electron .",
     "package": "npm run build && electron-packager ./asar launcher --platform=win32",
+    "dist": "electron-builder",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -41,6 +43,7 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "electron": "^11.0.2",
+    "electron-builder": "^22.9.1",
     "electron-packager": "^15.1.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
@@ -54,5 +57,17 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
+  },
+  "build": {
+    "appId": "com.peroandco.launcher",
+    "productName": "Launcher",
+    "target": "NSIS",
+    "directories": {
+      "output": "build"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
   }
 }
